@@ -1,0 +1,2 @@
+Defaults:fieldtech !requiretty
+fieldtech ALL=(root) NOPASSWD: /usr/bin/less /var/log/aperture/access.log

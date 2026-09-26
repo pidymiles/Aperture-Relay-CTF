@@ -1,0 +1,16 @@
+services:
+  aperture-relay:
+    build: .
+    container_name: aperture-relay-ctf
+    restart: unless-stopped
+    ports:
+      - "${BIND_IP:-127.0.0.1}:8080:8080"
+      - "${BIND_IP:-127.0.0.1}:2222:22"
+    environment:
+      DATA_ROOT: /data
+      PORT: "8080"
+    volumes:
+      - aperture-relay-data:/data
+
+volumes:
+  aperture-relay-data:
